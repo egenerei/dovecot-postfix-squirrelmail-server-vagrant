@@ -1,0 +1,10 @@
+$ttl 38400 ;
+56.168.192.in-addr.arpa. IN SOA mail.aula.izv. admin.aula.izv. (
+  1316802825
+  10800
+  3600
+  604800
+  38400 )
+56.168.192.in-addr.arpa. IN NS mail.aula.izv.
+
+101.56.168.192.in-addr.arpa. IN PTR mail.aula.izv.

@@ -1,0 +1,11 @@
+$ttl 38400 ;
+aula.izv. IN SOA mail.aula.izv. admin.aula.izv. (
+  2016101401
+  604800
+  86400
+  2419200
+  38400 )
+aula.izv. IN NS mail.aula.izv.
+aula.izv. IN A 192.168.56.101
+mail.aula.izv. IN A 192.168.56.101
+aula.izv. IN MX 10 mail.aula.izv.
