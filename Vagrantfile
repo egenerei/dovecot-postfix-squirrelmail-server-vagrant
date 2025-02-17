@@ -11,7 +11,7 @@ def create_client(config, name, ip, host_port,upgrade = nil)
   if upgrade
     client.vm.provision "shell", name: upgrade, inline: <<-script
       apt-get update
-      apt-get install debconf apache2 php7.4 libapache2-mod-php7.4 -y
+      apt-get install debconf apache2 php7.4 libapache2-mod-php7.4  bind9 -y
       debconf-set-selections <<< "postfix postfix/mailname string jdelrey.local"
       debconf-set-selections <<< "postfix postfix/main_mailer_type string 'localhost'"
       apt-get install postfix dovecot-core dovecot-imapd -y
