@@ -6,5 +6,4 @@ $ttl 38400 ;
   604800
   38400 )
 56.168.192.in-addr.arpa. IN NS mail.aula.izv.
-
 101.56.168.192.in-addr.arpa. IN PTR mail.aula.izv.

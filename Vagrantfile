@@ -11,7 +11,7 @@ def create_client(config, name, ip, host_port,upgrade = nil)
   if upgrade
     client.vm.provision "shell", name: upgrade, inline: <<-script
       apt-get update
-      apt-get install debconf apache2 php7.4 libapache2-mod-php7.4  bind9 bind9-dnsutils -y
+      apt-get install debconf apache2 php7.4 libapache2-mod-php7.4 bind9 bind9-dnsutils -y
       debconf-set-selections <<< "postfix postfix/mailname string jdelrey.local"
       debconf-set-selections <<< "postfix postfix/main_mailer_type string 'localhost'"
       apt-get install postfix dovecot-core dovecot-imapd -y
@@ -36,6 +36,7 @@ def create_client(config, name, ip, host_port,upgrade = nil)
       systemctl start apache2
       systemctl reload apache2
       systemctl enable apache2
+      mkdir -p /etc/bind/zones
       cp /vagrant/db.aula.izv /etc/bind/zones/db.aula.izv
       cp /vagrant/db.192.168.56 /var/lib/bind/db.192.168.56
       cp /vagrant/named.conf.local /etc/bind/named.conf.local
